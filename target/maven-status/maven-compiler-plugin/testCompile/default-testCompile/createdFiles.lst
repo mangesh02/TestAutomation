@@ -1,0 +1,3 @@
+SimpleTestStep.class
+automation\stepdefs\HSBCWebStep.class
+automation\suite\RunWIPCukes.class

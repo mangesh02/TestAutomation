@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cucumber-JVM Html Reports - Feature: HSBC Website page loading </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+
+<script type="text/javascript" src="highcharts.js"></script>
+<script type="text/javascript" src="highcharts-3d.js"></script>
+
+<link rel="stylesheet" href="bootstrap.min.css" type="text/css"/>
+
+<link rel="stylesheet" href="reporting.css" type="text/css"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#tablesorter").tablesorter();
+});
+</script>
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber-jvm Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="feature-overview.html">Features</a></li>
+        <li role="presentation" ><a href="tag-overview.html">Tags</a></li>
+        <li role="presentation" ><a href="step-overview.html">Steps</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" id="summary">
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Project</th>
+                          <th>Number</th>
+                        <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="info">
+            <td>MobileAutomation</td>
+                          <td>001</td>
+                        <td>09 Jun 2017, 17:49</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="title">
+  <h2>Feature Report</h2>
+  </div>
+
+
+<div class="container-fluid" id="report-summary">
+  <table class="stats-table">
+    <thead>
+  <tr class="header">
+        <th></th>
+    <th id="stats-header-scenarios" colspan="3">Scenarios</th>
+    <th id="stats-header-steps" colspan="7">Steps</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <th id="stats-header-key">Feature</th>
+        <th id="stats-header-scenarios-total">Total</th>
+    <th id="stats-header-scenarios-passed">Passed</th>
+    <th id="stats-header-scenarios-failed">Failed</th>
+    <th id="stats-header-steps-total">Total</th>
+    <th id="stats-header-steps-passed"    class="passed">Passed</th>
+    <th id="stats-header-steps-failed"    class="failed">Failed</th>
+    <th id="stats-header-steps-skipped"   class="skipped">Skipped</th>
+    <th id="stats-header-steps-pending"   class="pending">Pending</th>
+    <th id="stats-header-steps-undefined" class="undefined">Undefined</th>
+    <th id="stats-header-steps-missing"   class="missing">Missing</th>
+    <th id="stats-header-duration">Duration</th>
+    <th id="stats-header-status">Status</th>
+  </tr>
+</thead>
+
+        <tr>
+      <td class="tagname"><a id="stats-HSBC Website page loading" href="src-test-resources-features-HSBCWeb-feature.html">HSBC Website page loading</a></td>
+            <td id="stats-number-scenarios-HSBC Website page loading">1</td>
+      <td id="stats-number-scenarios-passed-HSBC Website page loading">0</td>
+      <td id="stats-number-scenarios-failed-HSBC Website page loading">1</td>
+      <td id="stats-number-steps-HSBC Website page loading">3</td>
+      <td id="stats-number-steps-passed-HSBC Website page loading">3</td>
+      <td id="stats-number-steps-failed-HSBC Website page loading"    >0</td>
+      <td id="stats-number-steps-skipped-HSBC Website page loading"   >0</td>
+      <td id="stats-number-steps-pending-HSBC Website page loading"   >0</td>
+      <td id="stats-number-steps-undefined-HSBC Website page loading" >0</td>
+      <td id="stats-number-steps-missing-HSBC Website page loading"   >0</td>
+      <td id="stats-duration-HSBC Website page loading" class="duration-format">25s 575ms</td>
+      <td id="stats-status-HSBC Website page loading" class="failed">Failed</td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="container-fluid" id="report-details">
+  <div class="feature-tags"></div>
+  <div class="failed">
+    <div class="feature-line">
+      <span class="feature-keyword">Feature: </span>HSBC Website page loading
+    </div>
+  </div>
+  <div class="feature-description"></div>
+
+      <div class="feature-tags"></div>
+    <div class="passed"><span class="step-keyword">Before </span><i>Hooks.startBrowser()</i><span class="step-duration"></span></div>
+    <div class="failed"><span class="element-keyword">Scenario: </span><span class="element-name">To verify HSBC Credit card page is loading sucessfully</span></div>
+          <div class="passed"><span class="step-keyword">Given  </span><span class="step-name">hsbc website page is open</span><span class="step-duration">15s 568ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">When  </span><span class="step-name">user clicks on the online banking button</span><span class="step-duration">08s 771ms</span></div>
+      
+            <div></div>
+      <div></div>
+          <div class="passed"><span class="step-keyword">Then  </span><span class="step-name">Online banking page should open</span><span class="step-duration">01s 236ms</span></div>
+      
+            <div></div>
+      <div></div>
+        <div class="failed"><span class="step-keyword">After </span><i>Hooks.closeBrowser(Scenario)</i><span class="step-duration"></span><div class="output_message"><input class="output_collapse" id="output_1406763631" type="checkbox"><label for="output_1406763631">org.openqa.selenium.WebDriverException: unknown error: unhandled inspector error: {"code":-32603,"message":"Unable to capture screenshot"}</label><div>  (Session info: webview=30.0.0.0)<br/>  (Driver info: chromedriver=2.28.455520 (cc17746adff54984afff480136733114c6b3704b),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)<br/>Command duration or timeout: 48 milliseconds<br/>Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'<br/>System info: host: 'DESKTOP-RAFV5I5', ip: '192.168.1.107', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'<br/>Driver info: org.openqa.selenium.remote.RemoteWebDriver<br/>Capabilities [{deviceScreenSize=480x854, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=J714LV2R10020324, platform=LINUX, deviceUDID=J714LV2R10020324, desired={platformVersion=4.4.2, browserName=Browser, platformName=Android, deviceName=iris X1}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, browserName=Browser, javascriptEnabled=true, deviceModel=iris X1, platformName=Android, deviceManufacturer=Lava}]<br/>Session ID: f51304da-9f45-40fc-8847-f38cc6e04479<br/>	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br/>	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br/>	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)<br/>	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)<br/>	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)<br/>	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)<br/>	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:701)<br/>	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:335)<br/>	at browsers.Hooks.closeBrowser(Hooks.java:39)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.lang.reflect.Method.invoke(Method.java:498)<br/>	at cucumber.runtime.Utils$1.call(Utils.java:37)<br/>	at cucumber.runtime.Timeout.timeout(Timeout.java:13)<br/>	at cucumber.runtime.Utils.invoke(Utils.java:31)<br/>	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)<br/>	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:223)<br/>	at cucumber.runtime.Runtime.runHooks(Runtime.java:211)<br/>	at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:205)<br/>	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)<br/>	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)<br/>	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)<br/>	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)<br/>	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)<br/>	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)<br/>	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)<br/>	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)<br/>	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)<br/>	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)<br/>	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)<br/>	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)<br/>	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)<br/>	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)<br/>	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)<br/>	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)<br/>	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)<br/>	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)<br/>	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)<br/>	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)<br/></div></div></div>
+    <br>
+  </div>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+      <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+      <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Cucumber-JVM Reports</a>
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

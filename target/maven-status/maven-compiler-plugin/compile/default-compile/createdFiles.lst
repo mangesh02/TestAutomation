@@ -1,0 +1,8 @@
+automation\config\PlatformDetails.class
+pages\Page.class
+browsers\AndroidBrowser.class
+browsers\Hooks.class
+browsers\MobileBrowserFactory.class
+automation\config\GenericActions.class
+automation\config\ReadPropertiesFile.class
+pages\HSBCWebsitePage.class
