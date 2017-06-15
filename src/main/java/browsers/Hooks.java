@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import automation.config.PlatformDetails;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -24,16 +25,35 @@ public class Hooks {
 	static WebDriver driver;
 	int number = 0;
 	Logger log = LoggerFactory.getLogger(Hooks.class);
-
+	
 	@Before
-	public void startSession() throws IOException {
+	public void startSession(Scenario scenario) throws IOException {
+		System.out.println("This is the name of the tag for feature file "+scenario.getSourceTagNames());
+		/*if (PlatformDetails.getPlatform().equals("AndroidBrowser")) {
+			scenario.write("Scenario executed on " + PlatformDetails.getDeviceName() + " with OS version "
+					+ PlatformDetails.getPlatformName() + " " + PlatformDetails.getPlatformVersion() + " on "
+					+ PlatformDetails.getBrowserName());
+		} else if (PlatformDetails.getPlatform().equals("AndroidApp")) {
+			scenario.write("Scenario executed on " + PlatformDetails.getDeviceName() + " with OS version "
+					+ PlatformDetails.getPlatformName() + " " + PlatformDetails.getPlatformVersion() + " on "
+					+ PlatformDetails.getApkName() + " Native App");
+		}*/
 		driver = MobilePlatformFactory.configuredPlatform();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		log.info("Session Started");
 	}
 
 	@After
-	public void closeSession(Scenario scenario) {
+	public void closeSession(Scenario scenario) throws Exception {
+		if (PlatformDetails.getPlatform().equals("AndroidBrowser")) {
+			scenario.write("Scenario executed on " + PlatformDetails.getDeviceName() + " with OS version "
+					+ PlatformDetails.getPlatformName() + " " + PlatformDetails.getPlatformVersion() + " on "
+					+ PlatformDetails.getBrowserName());
+		} else if (PlatformDetails.getPlatform().equals("AndroidApp")) {
+			scenario.write("Scenario executed on " + PlatformDetails.getDeviceName() + " with OS version "
+					+ PlatformDetails.getPlatformName() + " " + PlatformDetails.getPlatformVersion() + " on "
+					+ PlatformDetails.getApkName() + " Native App");
+		}
 		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		scenario.embed(screenshot, "image/png");
 		driver.quit();

@@ -1,8 +1,12 @@
 automation\config\PlatformDetails.class
 pages\Page.class
-browsers\AndroidBrowser.class
 browsers\Hooks.class
-browsers\MobileBrowserFactory.class
+browsers\AndroidPlatform.class
+pages\CalculatorPage.class
 automation\config\GenericActions.class
+browsers\IOSPlatform.class
+pages\FlipkartHomePage.class
+pages\MobileAppPage.class
 automation\config\ReadPropertiesFile.class
+browsers\MobilePlatformFactory.class
 pages\HSBCWebsitePage.class

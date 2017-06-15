@@ -1,63 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: automation.suite.RunWIPCukes
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 54.549 sec <<< FAILURE! - in automation.suite.RunWIPCukes
-Scenario: To verify HSBC Credit card page is loading sucessfully  Time elapsed: 0.106 sec  <<< ERROR!
-org.openqa.selenium.WebDriverException: unknown error: unhandled inspector error: {"code":-32603,"message":"Unable to capture screenshot"}
-  (Session info: webview=30.0.0.0)
-  (Driver info: chromedriver=2.28.455520 (cc17746adff54984afff480136733114c6b3704b),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 48 milliseconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'DESKTOP-RAFV5I5', ip: '192.168.1.107', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{deviceScreenSize=480x854, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=J714LV2R10020324, platform=LINUX, deviceUDID=J714LV2R10020324, desired={platformVersion=4.4.2, browserName=Browser, platformName=Android, deviceName=iris X1}, platformVersion=4.4.2, webStorageEnabled=false, locationContextEnabled=false, takesScreenshot=true, browserName=Browser, javascriptEnabled=true, deviceModel=iris X1, platformName=Android, deviceManufacturer=Lava}]
-Session ID: f51304da-9f45-40fc-8847-f38cc6e04479
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:701)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:335)
-	at browsers.Hooks.closeBrowser(Hooks.java:39)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at cucumber.runtime.Utils$1.call(Utils.java:37)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-	at cucumber.runtime.Utils.invoke(Utils.java:31)
-	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
-	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:223)
-	at cucumber.runtime.Runtime.runHooks(Runtime.java:211)
-	at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:205)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)
-	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Tests run: 16, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 182.011 sec <<< FAILURE! - in automation.suite.RunWIPCukes
+Then Our purpos page should open(Scenario: To verify HSBC Our purpose page is loading sucessfully)  Time elapsed: 0.018 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<Our purpos[e]> but was:<Our purpos[]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at automation.stepdefs.HSBCWebStep.display_online_banking_page(HSBCWebStep.java:69)
+	at ?.Then Our purpos page should open(HSBCWeb1.feature:12)
+
+Scenario: To verify HSBC Our purpose page is loading sucessfully  Time elapsed: 0.036 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<Our purpos[e]> but was:<Our purpos[]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at automation.stepdefs.HSBCWebStep.display_online_banking_page(HSBCWebStep.java:69)
+	at ?.Then Our purpos page should open(HSBCWeb1.feature:12)
 

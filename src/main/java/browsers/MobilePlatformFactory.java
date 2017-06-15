@@ -26,7 +26,11 @@ public class MobilePlatformFactory {
 			selectedDriver = AndroidPlatform.configuredAndroidBrowser();
 		}else if(desiredBrowser.equalsIgnoreCase("AndroidApp")){
 			selectedDriver = AndroidPlatform.configuredAndroidApp();
-		} 
+		}else if(desiredBrowser.equalsIgnoreCase("AndroidBrowserStack")){
+			selectedDriver = AndroidPlatform.configuredAndroidBrowserStack();
+		}else if(desiredBrowser.equalsIgnoreCase("IOSBrowserStack")){
+			selectedDriver = IOSPlatform.configuredIOSBrowserStack();
+		}  
 		else {
 			throw new NotImplementedException("Desired Browser is not Found");
 		}

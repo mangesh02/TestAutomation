@@ -16,7 +16,16 @@ public class HSBCWebsitePage extends Page {
 	protected WebElement onlineBankingButton;
 
 	@FindBy(css = "div.title-content>h1")
-	protected WebElement onlineBankingPageHeader;
+	protected WebElement pageHeader;
+
+	@FindBy(css = "div.home-page-content a[href='/about-hsbc']")
+	protected WebElement aboutHSBCLink;
+
+	@FindBy(css = "div.home-page-content a[href='/about-hsbc/our-purpose']")
+	protected WebElement ourPurposeLink;
+	
+	@FindBy(css = "div.ss-tag a[href='/tag/life-at-hsbc']")
+	protected WebElement lifeAtHSBCLink;
 
 	public HSBCWebsitePage(WebDriver driver) throws IOException {
 		super(driver);
@@ -28,11 +37,31 @@ public class HSBCWebsitePage extends Page {
 		elements.loadURL(authUrl);
 	}
 
-	public void clickOnlieBankingButton() {
+	public void clickOnlineBankingButton() {
 		elements.click(onlineBankingButton);
 	}
 
 	public String getPageHeader() {
-		return elements.getText(onlineBankingPageHeader);
+		return elements.getText(pageHeader);
+	}
+
+	public void clickOnAboutHSBCLink() {
+		elements.click(aboutHSBCLink);
+	}
+
+	public void clickOnOurPurposeLink() {
+		elements.click(ourPurposeLink);
+	}
+	
+	public void clickOnLifeAtHSBCLink() {
+		elements.click(lifeAtHSBCLink);
+	}
+	
+	public void scrollToAboutHSBCLink() {
+		elements.scrollToSpecificPoint("0", "1500");
+	}
+	
+	public void scrollToOurPurposeLink() {
+		elements.scrollToSpecificPoint("0", "1700");
 	}
 }

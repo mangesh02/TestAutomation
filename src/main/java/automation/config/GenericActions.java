@@ -3,13 +3,13 @@ package automation.config;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 
 public class GenericActions {
 	WebDriver driver;
@@ -69,10 +69,14 @@ public class GenericActions {
 			retry++;
 		}
 	}
-	
-	public void waitForElementToDisappear(List<WebElement> locator){
+
+	public void waitForElementToDisappear(List<WebElement> locator) {
 		List<WebElement> elements = locator;
-		WebDriverWait wait = new WebDriverWait(this.driver,10);
+		WebDriverWait wait = new WebDriverWait(this.driver, 10);
 		wait.until(ExpectedConditions.invisibilityOfAllElements(elements));
+	}
+
+	public void scrollToSpecificPoint(String xAxis, String yAxis) {
+		((JavascriptExecutor) driver).executeScript("scroll(" + xAxis + ", " + yAxis + ")");
 	}
 }

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -17,7 +18,10 @@ import io.appium.java_client.android.AndroidDriver;
 
 
 public final class AndroidPlatform {
-	static Logger log = LoggerFactory.getLogger(Hooks.class);
+	static Logger log = LoggerFactory.getLogger(AndroidPlatform.class);
+	//public static final String USERNAME = "hsbcsystem1";
+	  //public static final String AUTOMATE_KEY = "aB9AAb7nHxAsS7xWD22W";
+	  //public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 	
 	public static WebDriver configuredAndroidBrowser() throws IOException{
@@ -50,6 +54,23 @@ public final class AndroidPlatform {
 		driver = new AndroidDriver(new URL(PlatformDetails.getAppiumHubURL()), capabilities);
 		driver.manage().timeouts().implicitlyWait(waitSeconds, TimeUnit.SECONDS);
 		log.info("Launching App Session on " + PlatformDetails.getDeviceName());		
+		return driver;
+	}
+	
+	public static WebDriver configuredAndroidBrowserStack() throws IOException{
+		final int waitSeconds = 30;
+		WebDriver driver = null;
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability("browserName", PlatformDetails.getBrowserName());
+		capabilities.setPlatform(Platform.ANDROID);
+		capabilities.setCapability("device", PlatformDetails.getDeviceName());
+		capabilities.setCapability("realMobile", "true");
+		capabilities.setCapability("browserstack.debug", "true");
+		driver = new RemoteWebDriver(new URL(PlatformDetails.getBrowserStackURL()), capabilities);
+		//driver.manage().deleteAllCookies();
+		driver.manage().timeouts().implicitlyWait(waitSeconds, TimeUnit.SECONDS);
+		log.info("Opening Browser Session with BrowserStack on " + PlatformDetails.getDeviceName() + " on "
+				+ PlatformDetails.getBrowserName());
 		return driver;
 	}
 	

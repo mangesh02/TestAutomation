@@ -1,3 +1,4 @@
-SimpleTestStep.class
-automation\stepdefs\HSBCWebStep.class
 automation\suite\RunWIPCukes.class
+automation\stepdefs\CalculatorStep.class
+automation\stepdefs\FlipkartAppStep.class
+automation\stepdefs\HSBCWebStep.class
