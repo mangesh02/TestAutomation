@@ -24,8 +24,8 @@ public class HSBCWebsitePage extends Page {
 	@FindBy(css = "div.home-page-content a[href='/about-hsbc/our-purpose']")
 	protected WebElement ourPurposeLink;
 	
-	@FindBy(css = "div.ss-tag a[href='/tag/life-at-hsbc']")
-	protected WebElement lifeAtHSBCLink;
+	@FindBy(css = "div.ss-tag a[href='/tag/digital-and-innovation']")
+	protected WebElement digitalAndInnovationLink;
 
 	public HSBCWebsitePage(WebDriver driver) throws IOException {
 		super(driver);
@@ -53,8 +53,8 @@ public class HSBCWebsitePage extends Page {
 		elements.click(ourPurposeLink);
 	}
 	
-	public void clickOnLifeAtHSBCLink() {
-		elements.click(lifeAtHSBCLink);
+	public void clickOnDigitalAndInnovationLink() {
+		elements.click(digitalAndInnovationLink);
 	}
 	
 	public void scrollToAboutHSBCLink() {

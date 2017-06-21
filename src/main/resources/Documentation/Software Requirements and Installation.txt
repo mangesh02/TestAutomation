@@ -1,0 +1,16 @@
+1. Eclipse - Neon
+2. Appium - Desktop App appium-desktop-Setup-1.0.2-beta.2.exe
+3. Java 8 - jdk-8u131-windows-x64.exe
+4. Maven 3.5.0 - apache-maven-3.5.0-bin.zip
+5. Android Studio - android-studio-bundle-162.3934792-windows.exe
+6. Real Device - Samsung Galaxy S7 Edge
+7. Samsung USB Driver for Mobile Phones
+8. Github Access
+9. Git Client - Git-2.13.0-32-bit.exe
+10. Chrome version must be >= 55.0.2883.0
+
+11. For MI Devices for browser - USB debugging
+USB debugging(Security settings)
+Enable OEM unlock
+Settings -> Additional Settings -> Privacy: Check the Unknown Sources option
+Settings -> Additional Settings -> Developer options: Check the Install via USB option.

@@ -58,9 +58,9 @@ public class HSBCWebStep {
 		log.info("Clicked on Our purpose link on homepage");
 	}
 	
-	@When("^user clicks on the life at hsbc link$")
+	@When("^user clicks on the digital and innovation link$")
 	public void user_clicks_on_life_at_hsbc_link() throws InterruptedException {
-		hsbcwebsitepage.clickOnLifeAtHSBCLink();
+		hsbcwebsitepage.clickOnDigitalAndInnovationLink();
 		log.info("Clicked on Life at HSBC link on homepage");
 	}
 

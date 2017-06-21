@@ -1,0 +1,47 @@
+Mobile Automation Framework:
+
+Overview:
+The framework is based on Selenium webdriver with Java and usage of Cucumber as BDD tool along with Appium as a medium for executing tests on Mobile platform.
+We have used Maven as a build tool for the framework hence all the libraries are added as Maven dependencies through poxm.xml.
+Following image depicts the folder structure of the framework.
+
+Let us understand the framework in detail.
+We have divided the configurations and the test classes. All the configurations are in the src/main/java source folder whereas all the test classes are in 
+the src/test/java and src/test/resources.
+
+src/main/java consists of three pakages autmation.config, browsers and pages.
+automation.config consists of GenericActions class file which includes all the common resuable methods related to performing an action on a webpage such as clicking on a button, entering text in textbox, etc.
+PlatformDetails class file includes the variables which store details related to the environment. ReadPropertiesFile consists the code for reading data from testconfig.properties file.
+
+browsers package consists of AndroidPlatform class file which includes code related to invoking either a browser on real device or browserstack or native app on real device on Andorid OS. 
+IOSPlatform class file would include code related to invoking either a browser on real device, simlutaor or browserstack or native app on real device on iOS.
+Hooks is the class file which executes before and after each of the scenario in a feature file.
+MobilePlatformFactory will fetch an input from testconfig.properties file and route the flow as to which platform needs to be invoked, browser or a native app, on android or iOS, on real device, simulator/emulator or browserstack.
+
+pages package consists of Page class file which is a base class used to initiate a PageFactory model and rest of the class files in the package would be page objects specific to the project you would be working on.
+
+src/test/java consists of two packages automation.stepdefs and automation.sute
+automation.stepdefs consists of all the Step definitions declared for the corresponding feature files.
+autmation.suite consists of the runner class file where in you can define the suite which you want to execute.
+
+src/test/resources consiste of two folders features and testapplication. It also consists of testconfig.properties file
+features folder consists of all the feature file where in you write your test scenarios.
+testapplication folder will include the test .apk file which would be project specific.
+testconfig.properties file is the one where all the configurations related to the Platform and the Environement is to be done.
+
+Since we are using BDD as our primary framework pattern and using Cucumber as our BDD tool, the reports generated would be the Cucumber-jvm and it will be generated in target/site/cucumber-reports folder.
+
+Flow:
+Now that the framework has been explained let us now understand the flow of the framework.
+The main configurations are to be done in the testconfig.properties file, the explanation for the configuration is mentioned in the same file itself.
+The data from the testconfig.properties file is read and stored in the PlatformDetails file. These stored data in the PlatformDetails is then used in the different configuration setup class files.
+The browser or native app configuration for a mobile are called in the AndroidPlatform or IOSPlatform class files.
+Which browser or native app to be invoked is called in the MobilePlatformFactory.
+
+So our start point in the test execution preferably will be the pom.xml which you need to invoke as mvn clean install. Once the pom file is invoked, it will then find the RunWIPCukes file which is a suite file.
+It will then check which all feature files need to be executed. It will start executing scenario in the feature file one by one, but before each scenario starts getting executed it will first
+execute the @Before method in the Hooks which in turn calls the method in the MobilePlatformfactory where it checks which browser or native app to invoke and corresponding to that it will call the method
+from AndroidPlatform or IOSPlatform, which will eventually invoke the platform and return to Hooks, Hooks then return to the scenario in feature file whcih will resume its execution. Once the entire scenario is 
+executed, at the end it will call the @After method in the Hooks which will clen up the session. Once all the scenarios in all the feature files are exected, the report is generated in the target/site/cucumber-reports folder.
+
+We can execute the individula tests as Cucumber feature as well and also execute the suite directly from the Suite file as Jnuit Test. 

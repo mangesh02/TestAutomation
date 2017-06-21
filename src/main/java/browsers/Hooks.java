@@ -3,8 +3,10 @@ package browsers;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
@@ -29,15 +31,6 @@ public class Hooks {
 	@Before
 	public void startSession(Scenario scenario) throws IOException {
 		System.out.println("This is the name of the tag for feature file "+scenario.getSourceTagNames());
-		/*if (PlatformDetails.getPlatform().equals("AndroidBrowser")) {
-			scenario.write("Scenario executed on " + PlatformDetails.getDeviceName() + " with OS version "
-					+ PlatformDetails.getPlatformName() + " " + PlatformDetails.getPlatformVersion() + " on "
-					+ PlatformDetails.getBrowserName());
-		} else if (PlatformDetails.getPlatform().equals("AndroidApp")) {
-			scenario.write("Scenario executed on " + PlatformDetails.getDeviceName() + " with OS version "
-					+ PlatformDetails.getPlatformName() + " " + PlatformDetails.getPlatformVersion() + " on "
-					+ PlatformDetails.getApkName() + " Native App");
-		}*/
 		driver = MobilePlatformFactory.configuredPlatform();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		log.info("Session Started");

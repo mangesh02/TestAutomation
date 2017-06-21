@@ -1,4 +1,3 @@
-@androidapp
 Feature: Calculator functions
 
 Scenario: To verify add function in Calculator
