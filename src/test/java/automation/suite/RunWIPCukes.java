@@ -1,16 +1,17 @@
 package automation.suite;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
 import com.cucumber.listener.Reporter;
-import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
-import automation.config.PlatformDetails;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import reports.HTMLParser;
+import reports.XMLParser;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = { "pretty", "json:target/cucumber.json" }, glue = { "automation.stepdefs",
@@ -27,5 +28,4 @@ public class RunWIPCukes {
 	 * Reporter.setSystemInfo("OS", "Windows");
 	 * Reporter.setTestRunnerOutput("Sample Test run"); }
 	 */
-
 }

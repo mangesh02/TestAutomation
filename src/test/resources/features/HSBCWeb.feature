@@ -9,4 +9,4 @@ Feature: HSBC Website page loading successfully
   Scenario: To verify HSBC Life at HSBC page is loading sucessfully
     Given hsbc website page is open
     When user clicks on the digital and innovation link
-    Then Life at HSBC page should open
+    Then Digital and innovation page should open

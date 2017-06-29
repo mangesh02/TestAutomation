@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 import org.junit.Assert;
+import org.junit.Rule;
+import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +30,9 @@ public class HSBCWebStep {
 		this.driver = hooks.getDriver();
 		this.hsbcwebsitepage = new HSBCWebsitePage(this.driver);
 	}
+	
+	//@Rule
+	//public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
 	@Given("^hsbc website page is open$")
 	public void user_on_hsbc_website_page() throws MalformedURLException {
@@ -35,7 +40,7 @@ public class HSBCWebStep {
 		// Reporter.addStepLog("HSBC website page has been loaded");
 		// Reporter.addScenarioLog("This is a test scenario log");//Test run on
 		// "+PlatformDetails.getDeviceName());
-		log.info("HSBC wesite page loaded");
+		log.info("HSBC website page loaded");
 	}
 
 	@When("^user clicks on the online banking button$")
@@ -65,7 +70,7 @@ public class HSBCWebStep {
 	}
 
 	@Then("^(.*) page should open$")
-	public void display_online_banking_page(String pageHeader) {
+	public void display_respective_page(String pageHeader) {
 		Assert.assertEquals(hsbcwebsitepage.getPageHeader(), pageHeader);
 		log.info("Verified the heading on the page which is " + pageHeader);
 	}

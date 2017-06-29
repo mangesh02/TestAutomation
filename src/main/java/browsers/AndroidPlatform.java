@@ -51,6 +51,7 @@ public final class AndroidPlatform {
 		capabilities.setCapability("platformName", PlatformDetails.getPlatformName());
 		capabilities.setCapability("appPackage", PlatformDetails.getAppPackage());
 		capabilities.setCapability("appActivity", PlatformDetails.getAppActivity());
+		capabilities.setCapability("noReset", true);
 		driver = new AndroidDriver(new URL(PlatformDetails.getAppiumHubURL()), capabilities);
 		driver.manage().timeouts().implicitlyWait(waitSeconds, TimeUnit.SECONDS);
 		log.info("Launching App Session on " + PlatformDetails.getDeviceName());		
